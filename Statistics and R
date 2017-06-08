@@ -1,0 +1,32 @@
+#HarvardX: PH525.1x Statistics and R
+
+
+a <- 0
+for (i in 1:25) {
+  a <- a + i^2
+}
+
+cars
+class(cars)
+
+as.numeric(rownames(cars))
+head(cars)
+mean(cars[,2])
+which(cars$dist == 85)
+
+install.packages("downloader")
+library(downloader) 
+url <- "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleMiceWeights.csv"
+filename <- "femaleMiceWeights.csv" 
+download(url, destfile=filename)
+
+femaleMiceWeights <- read.csv("~/femaleMiceWeights.csv")
+
+femaleMiceWeights$Bodyweight[11]
+
+length(femaleMiceWeights$Diet)
+
+mean(femaleMiceWeights$Bodyweight[13:24])
+
+set.seed(1)
+sample(femaleMiceWeights$Bodyweight[13:24], 1)
